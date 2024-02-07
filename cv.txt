@@ -1,0 +1,18 @@
+•  Responsible for leading and delivering technical project work for the Data and Analytics team.
+•  Extensive use of R, PostgreSQL and PostGIS for data wrangling, visualisation and geospatial analysis
+•  Delivered Full Fibre’s data-driven financial reporting.
+  -  Wrangled and united several relational tables to form a single summarised view for the finance department. This product is key to financial reporting.
+  -  Intensive data cleaning, data validation and stakeholder engagement  
+•  Automation of reporting 
+  -  Automated the monthly service billing, annual carbon footprint, and weekly build reports.
+  -  This automation was primarily achieved through PostgreSQL and R-markdown.
+  -  Implementation of strict unit tests to ensure accuracy and robustness of results.
+•  Designed and implemented a fibreoptic network dynamic visualisation tool.
+  -  Applied graph theory and dynamic visualisations to create an interactive network interrogation tool.
+  -  This product allows fibre planners to see a schematic representation of the network – quickly highlighting poor design quality and disconnected apparatus.
+•  Prototyped the company’s initial fibre routing report and data validation strategy.
+•  Actively participated in internal code reviews to ensure the accuracy of output and coding quality in the team.
+  -  As part of this, I co-piloted with colleagues on several high-impact projects.
+•  Designed and delivered a comprehensive introduction to SQL training course for non-technical colleagues throughout the business. This course was extremely well received, with attendees starting to use SQL for simple self-serve tasks.
+•  Assisted in due diligence associated with software procurement.
+  -  Set up and tested a connection to an external API for data extraction and validating a third-party software solution.
