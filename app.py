@@ -2,18 +2,18 @@ import dash
 from dash import dcc, html,dash_table
 from dash.dependencies import Input, Output
 import pandas as pd
-import duckdb
+# import duckdb
 
 # CSV data
-with duckdb.connect('db/business.db', read_only=True) as con:
-    df = con.sql('''
-    select
-            *,
-            array_to_string(sic_codes,'<br>') as sic_code
-    from sponsor_info
-    ''').to_df().drop(columns='sic_codes')
-
-
+# with duckdb.connect('db/business.db', read_only=True) as con:
+#     df = con.sql('''
+#     select
+#             *,
+#             array_to_string(sic_codes,'<br>') as sic_code
+#     from sponsor_info
+#     ''').to_df().drop(columns='sic_codes')
+df = pd.read_csv('2024-02-02_-_Worker_and_Temporary_Worker.csv')
+df.rename(columns={'Organisation Name':'CompanyName'},inplace=True)
 # Dash app
 app = dash.Dash(__name__)
 
@@ -43,7 +43,7 @@ def update_table(search_term):
     return table_data
 
 # AWS deployment setup
-INSTANCE_PROD = False  # Set to True for AWS deployment
+INSTANCE_PROD = True  # Set to True for AWS deployment
 
 if INSTANCE_PROD:
     # AWS Elastic Beanstalk configuration and deployment script
@@ -57,7 +57,7 @@ if INSTANCE_PROD:
         return 'Hello World'
 
     if __name__ == '__main__':
-        app.run_server(debug=True, port=5000)
+        app.run_server(debug=True,host='0.0.0.0', port=8050)
 else:
     # Local development setup
     if __name__ == '__main__':
