@@ -2,8 +2,16 @@ import dash
 from dash import dcc, html,dash_table
 from dash.dependencies import Input, Output
 import pandas as pd
+from dotenv import load_dotenv
+import os
+import duckdb
 
-df = pd.read_csv('2024-02-02_-_Worker_and_Temporary_Worker.csv')
+assert load_dotenv()
+
+conn = duckdb.connect(f"md:?motherduck_token={os.getenv('MOTHERDUCK_TOKEN')}")
+
+df = conn.sql('use jobhunt').sql('select * from companies.sponsor')
+
 df.rename(columns={'Organisation Name':'CompanyName'},inplace=True)
 # Dash app
 app = dash.Dash(__name__)
