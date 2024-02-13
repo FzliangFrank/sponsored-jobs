@@ -2,16 +2,7 @@ import dash
 from dash import dcc, html,dash_table
 from dash.dependencies import Input, Output
 import pandas as pd
-# import duckdb
 
-# CSV data
-# with duckdb.connect('db/business.db', read_only=True) as con:
-#     df = con.sql('''
-#     select
-#             *,
-#             array_to_string(sic_codes,'<br>') as sic_code
-#     from sponsor_info
-#     ''').to_df().drop(columns='sic_codes')
 df = pd.read_csv('2024-02-02_-_Worker_and_Temporary_Worker.csv')
 df.rename(columns={'Organisation Name':'CompanyName'},inplace=True)
 # Dash app

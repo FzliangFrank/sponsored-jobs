@@ -9,3 +9,5 @@ pandas
 scipy
 matplotlib
 seaborn
+python3-linedin
+requests
