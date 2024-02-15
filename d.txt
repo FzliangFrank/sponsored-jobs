@@ -1,0 +1,16 @@
+dash
+dash-renderer
+dash-core-components
+dash-html-components
+dash-table
+dash-bootstrap-components
+plotly
+numpy
+pandas
+scipy
+matplotlib
+seaborn
+python3-linedin
+requests
+python-dotenv
+duckdb
