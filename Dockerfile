@@ -1,9 +1,10 @@
-FROM continuumio/miniconda3
+FROM python:3.11
 COPY requirements.txt /tmp/
 COPY ./app.py app/app.py
 COPY ./.env app/.env
+# ADD app/assets ./assets 
 WORKDIR "/app"
-RUN conda install --file /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 ENTRYPOINT ["python3" ]
 CMD [ "app.py" ]
-EXPOSE 8050
+EXPOSE 8080
