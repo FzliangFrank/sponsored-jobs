@@ -1,6 +1,7 @@
 FROM python:3.11
 COPY requirements.txt /tmp/
 COPY ./app.py app/app.py
+COPY ./tools.py app/tools.py
 COPY ./.env app/.env
 # ADD app/assets ./assets 
 WORKDIR "/app"
