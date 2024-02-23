@@ -94,6 +94,7 @@ navbar = dbc.Navbar(
     dark=True,
 )
 # App layout
+# Goolge Analytic to track visit
 app.index_string = '''
 <html>
     <head>
@@ -179,7 +180,7 @@ app.layout = dbc.Container([
 def update_table(search_term,n_click):
     if search_term:
         # filtered_df = df[df['company_name'].str.contains(search_term, case=False, regex=True)]
-        exp=tbl.filter(_.company_name.re_search(search_term))
+        exp=tbl.filter(_.company_name.re_search('(?i)' + search_term + '(?-i)'))
         if n_click is None or n_click == 0:
             return init_render(exp)
         else:
